@@ -1,0 +1,12 @@
+<h1>User Form</h1>
+<%= form_with model: @user do |f| %>
+	<%= render "shared/flash" %>
+	<%= f.label "Email", placeholder: 'Email'%>
+	<%= f.email_field "email" %><br>
+	<%= f.label "Password", placeholder: 'Password'%>
+	<%= f.password_field "password"%><br>
+	<%= f.label "Password Confirmation", placeholder: 'Password Confirmation'%>
+	<%= f.password_field "password_confirmation"%><br>
+	<%= f.submit %>
+<% end %>
+

@@ -1,0 +1,11 @@
+<h1>Login Form</h1>
+
+<%= form_with url: login_path do |f| %>
+	<%= render "shared/flash" %>
+	<%= f.label "Email" %>
+	<%= f.email_field "email" %><br>
+	<%= f.label "Password" %>
+	<%= f.password_field "password" %><br>
+	<%= f.submit "Login"  %>
+	<%= link_to "Sign In", new_users_path %>
+<% end %>

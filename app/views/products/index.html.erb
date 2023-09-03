@@ -1,0 +1,24 @@
+<h1>Product Page</h1>
+<%= render "shared/flash" %>
+
+<%= link_to "Sign Out", logout_path, method: :get %>
+
+<table style= "border: 1px solid black;">
+	<tbody >
+		<tr>
+			<th>Product Name</th>
+			<th>Product Desc</th>
+			<th>Product price</th>
+			<th>Add To Cart</th>
+		</tr>
+		<% @products.each do |product| %>
+		<tr style="border: 1px solid black;">
+			<td><%= product.name %></td>
+			<td><%= product.description %></td>
+			<td><%= product.price %></td>
+			<td><%= link_to "Add To Cart", carts_path, data: { turbo_method: "post" } %></td>
+		</tr>
+		<% end %>
+			<td><%= link_to "View Carts", carts_path %></td>
+	</tbody>
+</table>

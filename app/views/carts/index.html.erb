@@ -1,0 +1,17 @@
+<h1>Cart Page</h1>
+<table style= "border: 1px solid black;">
+	<%= render "shared/flash"%>
+	<thead>Heading</thead>
+	<tbody >
+		<tr>
+			<th>Cart Id</th>
+		</tr>
+		<% @carts.each do |cart| %>
+		<tr style="border: 1px solid black;">
+			<td><%= cart.id %></td>
+			<td><%= link_to "Delete Cart", cart_path(cart.id), data: { turbo_method: "delete" } %></td>
+		</tr>
+		<% end %>
+			<td><%= link_to "Place Order", orders_path, data: {turbo_method: "post"} %></td>
+	</tbody>
+</table>
